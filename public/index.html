@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Upload Based Builders Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vercel Upload Based Builders</h1>
+        <p>This demonstrates how files can be uploaded and built using Vercel's builder system.</p>
+        
+        <div class="section">
+            <h2>Static Files</h2>
+            <p>Static files are served directly using the @vercel/static builder.</p>
+            <ul>
+                <li><a href="/static/sample.txt">Sample Text File</a></li>
+                <li><a href="/static/data.json">Sample JSON File</a></li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>API Endpoints</h2>
+            <p>Serverless functions built using various builders:</p>
+            <ul>
+                <li><a href="/api/hello.js">Node.js Function</a></li>
+                <li><a href="/api/python-hello.py">Python Function</a></li>
+                <li><a href="/api/time">Go Function</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>

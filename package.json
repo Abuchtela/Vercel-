@@ -1,0 +1,26 @@
+{
+  "name": "vercel-upload-builders",
+  "version": "1.0.0",
+  "description": "Demonstration of Vercel upload-based builders for different file types",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "vercel",
+    "builders",
+    "serverless",
+    "upload",
+    "static",
+    "functions"
+  ],
+  "devDependencies": {
+    "@vercel/node": "^3.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
