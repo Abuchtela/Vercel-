@@ -1,0 +1,11 @@
+This is a sample text file that demonstrates static file serving through Vercel's upload-based builders.
+
+Static files are processed using the @vercel/static builder, which serves them directly without any transformation.
+
+This file can be uploaded and will be served as-is, making it perfect for:
+- Documentation files
+- Plain text content
+- Configuration files
+- Any static content that doesn't require processing
+
+The static builder is efficient and fast, serving files with appropriate caching headers.

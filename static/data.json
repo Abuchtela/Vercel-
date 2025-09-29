@@ -1,0 +1,18 @@
+{
+  "message": "This is a sample JSON file served by Vercel's static builder",
+  "builder": "@vercel/static",
+  "features": [
+    "Direct file serving",
+    "No transformation required",
+    "Fast delivery",
+    "Automatic caching headers"
+  ],
+  "use_cases": [
+    "API mock data",
+    "Configuration files",
+    "Static datasets",
+    "Content files"
+  ],
+  "timestamp": "2024-01-01T00:00:00Z",
+  "version": "1.0.0"
+}
