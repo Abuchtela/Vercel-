@@ -1,0 +1,48 @@
+name: Deploy Contracts via Gnosis Safe
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      RPC_URL: ${{ secrets.RPC_URL }}
+      BASE_SAFE_ADDRESS: ${{ secrets.BASE_SAFE_ADDRESS }}
+      BASE_OWNER_KEY: ${{ secrets.BASE_OWNER_KEY }}
+      BASESCAN_API_KEY: ${{ secrets.BASESCAN_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compile contracts
+        run: npx hardhat compile
+
+      - name: Deploy contracts via Gnosis Safe
+        run: |
+          node scripts/deployViaSafe.js --network base | tee deployed.txt
+          grep "Deployed" deployed.txt | awk '{print $NF}' > addresses.txt || true
+
+      - name: Verify deployed contracts on BaseScan
+        if: success()
+        run: |
+          if [ -f addresses.txt ]; then
+            for addr in $(cat addresses.txt); do
+              echo "Verifying $addr"
+              npx hardhat verify --network base $addr || true
+            done
+          else
+            echo "No addresses found to verify"
+          fi
