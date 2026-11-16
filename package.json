@@ -4,7 +4,7 @@
   "description": "Demonstration of Vercel upload-based builders for different file types",
   "scripts": {
     "dev": "vercel dev",
-    "build": "vercel build",
+    "build": "vercel build --local-config vercel.json --yes",
     "deploy": "vercel --prod"
   },
   "keywords": [
@@ -16,6 +16,7 @@
     "functions"
   ],
   "devDependencies": {
+    "vercel": "^48.8.2",
     "@vercel/node": "^3.0.0",
     "typescript": "^5.0.0",
     "@types/node": "^20.0.0"
