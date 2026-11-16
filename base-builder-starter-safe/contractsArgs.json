@@ -1,0 +1,17 @@
+[
+  {
+    "name": "HelloWorld",
+    "args": []
+  },
+  {
+    "name": "Token",
+    "args": [
+      "BuilderToken",
+      "BLD"
+    ]
+  },
+  {
+    "name": "MyOtherContract",
+    "args": []
+  }
+]
